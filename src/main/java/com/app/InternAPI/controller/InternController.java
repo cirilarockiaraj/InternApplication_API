@@ -14,6 +14,11 @@ public class InternController {
 		return "Hello Interns";
 	}
 	
+	@GetMapping("/getinterns")
+	public String Interns() {
+		return "Hi Interns";
+	}
+	
 	@GetMapping("/intern/{name}/{id}")
 	public String getOneInterns(@PathVariable(value = "name") String name, @PathVariable(value = "id") String id) {
 		return "Hi "+name+" your ID : "+id;
