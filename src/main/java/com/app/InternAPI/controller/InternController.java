@@ -1,26 +1,21 @@
 package com.app.InternAPI.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import model.Interns;
+import service.InternService;
 
 @RestController
 @RequestMapping("/dashboard")
 public class InternController {
 	
-	@GetMapping("/allinterns")
-	public String getInterns() {
-		return "Hello Interns";
-	}
-	
-	@GetMapping("/getinterns")
-	public String Interns() {
-		return "Hi Interns";
-	}
-	
-	@GetMapping("/intern/{name}/{id}")
-	public String getOneInterns(@PathVariable(value = "name") String name, @PathVariable(value = "id") String id) {
-		return "Hi "+name+" your ID : "+id;
+	@Autowired(required = false)
+	InternService internService;
+	@PostMapping("/addinterns")
+	public Interns addInternController(@RequestBody Interns intern) {
+		return this.internService.addInternService(intern);
 	}
 }
