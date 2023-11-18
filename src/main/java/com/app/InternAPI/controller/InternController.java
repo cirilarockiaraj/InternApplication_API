@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import model.Interns;
-import service.InternService;
+
+import com.app.InternAPI.model.Interns;
+import com.app.InternAPI.service.InternService;
 
 @RestController
 @RequestMapping("/dashboard")
